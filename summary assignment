@@ -1,92 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
-    <title>המשחקים של דניאלה - לוח נתונים</title>
-    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <title>המשחקים של דניאלה - לוח מחוונים</title>
     <style>
         body {
+            direction: rtl;
             font-family: 'Segoe UI', sans-serif;
-            background: #f9f9f9;
+            background-color: #f4f6f8;
             margin: 0;
             padding: 0;
-            direction: rtl;
         }
+
         header {
-            background: #4a90e2;
+            background-color: #4a90e2;
             color: white;
             padding: 20px;
             text-align: center;
             font-size: 28px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
+
         .description {
             text-align: center;
-            margin: 20px auto;
-            max-width: 800px;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
             font-size: 18px;
             color: #333;
         }
+
         .button-container {
             text-align: center;
-            margin: 20px;
+            margin: 10px 0 30px;
         }
+
         .btn {
             background-color: #4a90e2;
             color: white;
             padding: 10px 20px;
             margin: 5px;
+            font-size: 16px;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .btn:hover {
             background-color: #357ab8;
         }
-        #vizContainer {
-            width: 100%;
-            max-width: 1200px;
-            height: 800px;
-            margin: auto;
+
+        #viz1752412183085 {
+            margin: 0 auto 40px;
+            max-width: 1150px;
         }
     </style>
 </head>
 <body>
-    <header>המשחקים של דניאלה - לוח מחוונים</header>
 
-    <div class="description">
-        באתר זה תוכלו לצפות בלוח מחוונים אינטראקטיבי המציג נתונים מגוונים מתוך מערכת ניהול המכירות של חנות המשחקים.
-        ניתן לראות פילוחים לפי סוגי משחקים, ערוצי הפצה, קבוצות גיל, אמצעי תשלום ועוד.
-    </div>
+<header>המשחקים של דניאלה - לוח מחוונים אינטראקטיבי</header>
 
-    <div class="button-container">
-        <button class="btn" onclick="viz.refreshDataAsync()">רענן נתונים</button>
-        <button class="btn" onclick="viz.undoAsync()">בטל פעולה</button>
-        <button class="btn" onclick="viz.redoAsync()">חזור על פעולה</button>
-    </div>
+<div class="description">
+    כאן תוכלו לצפות בלוח מחוונים המציג נתוני מכירות, תחומי משחקים, קבוצות גיל, ערוצי הפצה ועוד.
+    השתמשו בכפתורים להלן כדי לתפעל את הדוח.
+</div>
 
-    <div id="vizContainer"></div>
+<div class="button-container">
+    <button class="btn" onclick="viz.refreshDataAsync()">רענון נתונים</button>
+    <button class="btn" onclick="viz.undoAsync()">בטל פעולה</button>
+    <button class="btn" onclick="viz.redoAsync()">חזור על פעולה</button>
+</div>
 
-    <script>
-        const vizUrl = "https://public.tableau.com/views/WORKTOSHAY/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link";
-        const containerDiv = document.getElementById("vizContainer");
+<div class='tableauPlaceholder' id='viz1752412183085' style='position: relative'>
+    <noscript>
+        <a href='#'>
+            <img alt='Dashboard 1' src='https://public.tableau.com/static/images/WO/WORKTOSHAY/Dashboard1/1_rss.png' style='border: none' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='WORKTOSHAY/Dashboard1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/WO/WORKTOSHAY/Dashboard1/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+    </object>
+</div>
 
-        let viz;
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1752412183085');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if (divElement.offsetWidth > 800) {
+        vizElement.style.minWidth = '820px';
+        vizElement.style.maxWidth = '1150px';
+        vizElement.style.width = '100%';
+        vizElement.style.minHeight = '887px';
+        vizElement.style.maxHeight = '1087px';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    } else if (divElement.offsetWidth > 500) {
+        vizElement.style.minWidth = '820px';
+        vizElement.style.maxWidth = '1150px';
+        vizElement.style.width = '100%';
+        vizElement.style.minHeight = '887px';
+        vizElement.style.maxHeight = '1087px';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    } else {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '1227px';
+    }
 
-        function initViz() {
-            const options = {
-                hideTabs: true,
-                hideToolbar: false,
-                onFirstInteractive: function () {
-                    console.log("Tableau Viz has loaded.");
-                }
-            };
-            viz = new tableau.Viz(containerDiv, vizUrl, options);
-        }
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
 
-        document.addEventListener("DOMContentLoaded", initViz);
-    </script>
+    // שמירה על גישה ל-viz לצורך כפתורים
+    let viz;
+
+    function initializeViz() {
+        const options = {
+            hideTabs: true,
+            onFirstInteractive: function () {
+                console.log('Tableau Viz Loaded');
+            }
+        };
+        viz = new tableau.Viz(divElement, 'https://public.tableau.com/views/WORKTOSHAY/Dashboard1', options);
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeViz);
+</script>
+
 </body>
 </html>
